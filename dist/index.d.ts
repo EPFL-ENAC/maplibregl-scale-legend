@@ -26,5 +26,5 @@ export declare class ScaleLegendControl implements IControl {
     getDefaultPosition(): ControlPosition;
     onAdd(map: Map): HTMLElement;
     onRemove(): void;
-    showScale(scaleId: string): void;
+    showScale(scaleId: string | undefined): void;
 }
