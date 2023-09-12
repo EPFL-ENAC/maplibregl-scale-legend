@@ -13,7 +13,7 @@ export interface ScaleEntryDefinition {
   color: string
   label: string
   unit?: string
-  range?: number[] | string[]
+  range?: string[]
 }
 
 export type ScaleLegendOptions = {
@@ -90,8 +90,14 @@ export class ScaleLegendControl implements IControl {
           entryElement.style.backgroundColor = scaleEntry.color;
           let label = scaleEntry.label;
           if (label === undefined) {
-            if (scaleEntry.range)
-              label = scaleEntry.range.join(" - ");
+            if (scaleEntry.range) {
+              if (scaleEntry.range[0].length > 0 && scaleEntry.range[1].length > 0)
+                label = scaleEntry.range.join(" - ");
+              else if (scaleEntry.range[0].length > 0)
+                label = "> " + scaleEntry.range[0];
+              else if (scaleEntry.range[1].length > 0)
+                label = "< " + scaleEntry.range[1];
+            }
           }
           if (label !== undefined) {
             if (scaleEntry.unit) {

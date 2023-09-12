@@ -11,7 +11,7 @@ export interface ScaleEntryDefinition {
     color: string;
     label: string;
     unit?: string;
-    range?: number[] | string[];
+    range?: string[];
 }
 export type ScaleLegendOptions = {
     direction?: string;
