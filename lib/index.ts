@@ -119,7 +119,7 @@ export class ScaleLegendControl implements IControl {
     this.map = undefined;
   }
 
-  public showScale(scaleId: string): void {
+  public showScale(scaleId: string | undefined): void {
     if (!this.scaleContainer) {
       return;
     }
