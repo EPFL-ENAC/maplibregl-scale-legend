@@ -1,61 +1,49 @@
-# maplibregl-theme-switcher
+# maplibregl-scale-legend
 
 A MapLibre control to switch the map background layer.
 
 ## Installation:
 
 ```bash
-npm install https://github.com/EPFL-ENAC/maplibregl-theme-switcher.git --save
+npm install https://github.com/EPFL-ENAC/maplibregl-scale-legend.git --save
 ```
 
 ## Usage:
 
 ```ts
-import { ThemeSwitcherControl } from "maplibregl-theme-switcher";
+import { ScaleLegendControl } from "maplibregl-scale-legend";
 import { Map } from "maplibre-gl";
 
-import "maplibregl-theme-switcher/styles.css";
+import "maplibregl-scale-legend/styles.css";
 
 const map = new Map();
-map.addControl(new ThemeSwitcherControl());
+map.addControl(new ScaleLegendControl());
 ```
 
 ## Options:
 
-If you want to supply your own list of themes, pass them in the constructor. A theme id must match the corresponding layer id.
+If you want to supply your own list of scale legends, pass them in the constructor.
 
 ```ts
-import { ThemeDefinition, ThemeSwitcherControl } from "maplibregl-theme-switcher";
+import { ScaleLegendControl } from 'maplibregl-scale-legend',
+import type { ScaleDefinition } from 'maplibregl-scale-legend',
 
-const styles: ThemeDefinition[] = [
-    {
-        label: "Dark",
-        id:"dark"
-    },
-    {
-        label: "Light",
-        id:"light"
-    }
+const scales: ScaleDefinition[] = [
+    // ...
 ];
 
-// Pass options (optional)
-const options: ThemeSwitcherOptions = {
-    defaultStyle: "dark",
-    eventListeners: {
- // return true if you want to stop execution
- //           onOpen: (event: MouseEvent) => boolean;
- //           onSelect: (event: MouseEvent) => boolean;
- //           onChange: (event: MouseEvent, style: string) => boolean;
-    }
-};
-
-map.addControl(new ThemeSwitcherControl(styles, options));
+const scalesControl = new ScaleLegendControl(scales);
+map.addControl(scalesControl);
 ```
 
-If you want to specify a default theme, pass them in the constructor as second argument.
+If you want to show a specific scale, use the `schowScale()` function.
 
 ```ts
-map.addControl(new ThemeSwitcherControl(styles, 'dark'));
+// show a specific scale
+scalesControl.showScale(scaleId);
+
+// hide all scales
+scalesControl.showScale();
 ```
 
 ## Screenshots
