@@ -56,7 +56,17 @@ export class ScaleLegendControl implements IControl {
         scaleElement.classList.add("scale", scale.id.replace(/[^a-z0-9-]/gi, '_'));
         const captionElement = document.createElement("div");
         captionElement.classList.add("scale-caption");
-        captionElement.innerHTML = scale.title || "";
+        let captionTitle = scale.title;
+        if (captionTitle === undefined) {
+          captionTitle = scale.titleStart || "";
+          if (scale.titleEnd) {
+            captionTitle += " - " + scale.titleEnd;
+          }
+        }
+        captionElement.innerHTML = captionTitle;
+        if (scale.unit) {
+          captionElement.innerHTML += " (" + scale.unit + ")";
+        }
         scaleElement.appendChild(captionElement);
         for (const scaleEntry of scale.scale) {
           const entryElement = document.createElement("span");
