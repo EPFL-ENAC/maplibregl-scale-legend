@@ -27,6 +27,12 @@ button.scale-legend {
 .scale-caption-end {
     float: right;
 }
+
+.scale-caption-start, .scale-caption-end {
+    font-size: smaller;
+    font-weight: bolder;
+}
+
 .scale-entry {
     display: table-cell;
     width: 20px;
