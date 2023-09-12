@@ -18,7 +18,6 @@ class ScaleLegendControl {
         this.scaleButton.type = "button";
         this.scaleButton.classList.add("maplibregl-ctrl-icon");
         this.scaleButton.classList.add("scale-legend");
-        this.controlContainer.appendChild(this.scaleButton);
         this.scaleContainer = document.createElement("div");
         this.scaleContainer.classList.add("scale-list");
         for (const scale of this.scales) {
