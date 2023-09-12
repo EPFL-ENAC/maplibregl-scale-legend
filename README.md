@@ -48,6 +48,4 @@ scalesControl.showScale();
 
 ## Screenshots
 
-![Closed](assets/closed.png)
-
-![Open](assets/opened.png)
+![Scale](assets/scale.png)
