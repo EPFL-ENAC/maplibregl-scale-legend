@@ -33,7 +33,7 @@ class ScaleLegendControl {
             this.scaleContainer.appendChild(scaleElement);
         }
         this.scaleButton.classList.add("maplibregl-ctrl-icon");
-        this.scaleButton.classList.add("scale-switcher");
+        this.scaleButton.classList.add("scale-legend");
         this.controlContainer.appendChild(this.scaleButton);
         this.controlContainer.appendChild(this.scaleContainer);
         return this.controlContainer;
