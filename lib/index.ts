@@ -13,7 +13,7 @@ export interface ScaleEntryDefinition {
   color: string
   label: string
   unit?: string
-  range?: number[]
+  range?: number[] | string[]
 }
 
 export type ScaleLegendOptions = {
@@ -47,7 +47,7 @@ export class ScaleLegendControl implements IControl {
     this.scaleButton.type = "button";
     this.scaleButton.classList.add("maplibregl-ctrl-icon");
     this.scaleButton.classList.add("scale-legend");
-    this.controlContainer.appendChild(this.scaleButton);
+    //this.controlContainer.appendChild(this.scaleButton);
 
     this.scaleContainer = document.createElement("div");
     this.scaleContainer.classList.add("scale-list");
