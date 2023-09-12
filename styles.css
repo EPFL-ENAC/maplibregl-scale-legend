@@ -12,10 +12,20 @@ button.scale-legend {
 
 .scale.active {
     display: table;
+    margin-left: 7px;
     margin-right: 7px;
 }
+
 .scale-caption {
     display: table-caption
+}
+
+.scale-caption-start {
+    float: left;
+}
+
+.scale-caption-end {
+    float: right;
 }
 .scale-entry {
     display: table-cell;

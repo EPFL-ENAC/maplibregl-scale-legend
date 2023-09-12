@@ -10,9 +10,6 @@ export type ScaleDefinition = {
 export interface ScaleEntryDefinition {
     color: string;
     label: string;
-    value?: number;
-    min?: number;
-    max?: number;
     unit?: string;
     range?: number[];
 }
