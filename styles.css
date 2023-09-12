@@ -14,7 +14,9 @@ button.scale-legend {
     display: table;
     margin-right: 7px;
 }
-
+.scale-caption {
+    display: table-caption
+}
 .scale-entry {
     display: table-cell;
     width: 20px;

@@ -23,6 +23,10 @@ class ScaleLegendControl {
             scaleElement.id = scale.id;
             scaleElement.title = scale.title || "";
             scaleElement.classList.add("scale", scale.id.replace(/[^a-z0-9-]/gi, '_'));
+            const captionElement = document.createElement("div");
+            captionElement.classList.add("scale-caption");
+            captionElement.innerHTML = scale.title || "";
+            scaleElement.appendChild(captionElement);
             for (const scaleEntry of scale.scale) {
                 const entryElement = document.createElement("span");
                 entryElement.classList.add("scale-entry");
