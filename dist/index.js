@@ -33,6 +33,7 @@ class ScaleLegendControl {
                         label = scaleEntry.range.join(" - ");
                 }
                 entryElement.title = label;
+                entryElement.innerHTML = "&nbsp;";
                 scaleElement.appendChild(entryElement);
             }
             this.scaleContainer.appendChild(scaleElement);
