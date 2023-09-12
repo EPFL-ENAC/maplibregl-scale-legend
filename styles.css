@@ -1,13 +1,23 @@
+button.scale-legend {
+    display: inline-block;    
+}
+
+.scale-list {
+    display: inline-block;
+}
+
 .scale {
     display: none;
 }
 
 .scale.active {
-    display: block;
+    display: table;
+    margin-right: 7px;
 }
 
 .scale-entry {
-    width: 2px;
+    display: table-cell;
+    width: 20px;
 }
 
 .scale-legend {
