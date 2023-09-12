@@ -11,7 +11,7 @@ export type ScaleDefinition = {
 
 export interface ScaleEntryDefinition {
   color: string
-  label: string
+  label?: string
   unit?: string
   range?: string[]
 }
@@ -106,7 +106,7 @@ export class ScaleLegendControl implements IControl {
               label += " " + scale.unit;
             }
           }
-          entryElement.title = label;
+          entryElement.title = label ?? "";
           entryElement.innerHTML = "&nbsp;";
           scaleElement.appendChild(entryElement);
         }

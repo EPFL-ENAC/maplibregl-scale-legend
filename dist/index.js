@@ -74,7 +74,7 @@ class ScaleLegendControl {
                         label += " " + scale.unit;
                     }
                 }
-                entryElement.title = label;
+                entryElement.title = label !== null && label !== void 0 ? label : "";
                 entryElement.innerHTML = "&nbsp;";
                 scaleElement.appendChild(entryElement);
             }

@@ -9,7 +9,7 @@ export type ScaleDefinition = {
 };
 export interface ScaleEntryDefinition {
     color: string;
-    label: string;
+    label?: string;
     unit?: string;
     range?: string[];
 }
