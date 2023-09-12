@@ -27,7 +27,12 @@ class ScaleLegendControl {
                 const entryElement = document.createElement("span");
                 entryElement.classList.add("scale-entry");
                 entryElement.style.backgroundColor = scaleEntry.color;
-                entryElement.title = scaleEntry.label;
+                let label = scaleEntry.label;
+                if (label === undefined) {
+                    if (scaleEntry.range)
+                        label = scaleEntry.range.join(" - ");
+                }
+                entryElement.title = label;
                 scaleElement.appendChild(entryElement);
             }
             this.scaleContainer.appendChild(scaleElement);
