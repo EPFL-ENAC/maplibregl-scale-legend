@@ -22,12 +22,12 @@ class ScaleLegendControl {
             const scaleElement = document.createElement("div");
             scaleElement.id = scale.id;
             scaleElement.title = scale.title || "";
-            scaleElement.classList.add(scale.id.replace(/[^a-z0-9-]/gi, '_'));
+            scaleElement.classList.add("scale", scale.id.replace(/[^a-z0-9-]/gi, '_'));
             for (const scaleEntry of scale.scale) {
                 const entryElement = document.createElement("span");
                 entryElement.classList.add("scale-entry");
                 entryElement.style.backgroundColor = scaleEntry.color;
-                entryElement.innerText = "&nbsp;";
+                entryElement.title = scaleEntry.label;
                 scaleElement.appendChild(entryElement);
             }
             this.scaleContainer.appendChild(scaleElement);

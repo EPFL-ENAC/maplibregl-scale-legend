@@ -1,29 +1,13 @@
-.scale-list {
+.scale {
     display: none;
 }
 
-.maplibregl-ctrl-group .scale-list button {
-    background: none;
-    border: none;
-    cursor: pointer;
+.scale.active {
     display: block;
-    font-size: 14px;
-    padding: 8px 8px 6px;
-    text-align: right;
-    width: 100%;
-    height: auto;
 }
 
-.scale-list button.active {
-    font-weight: bold;
-}
-
-.scale-list button:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-.scale-list button + button {
-    border-top: 1px solid #ddd;
+.scale-entry {
+    width: 2px;
 }
 
 .scale-legend {
