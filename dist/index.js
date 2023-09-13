@@ -38,7 +38,6 @@ class ScaleLegendControl {
             }
             if (scale.titleStart || scale.titleEnd) {
                 const captionStartEndElement = document.createElement("div");
-                captionStartEndElement.classList.add("scale-caption");
                 if (scale.titleStart) {
                     const captionStartElement = document.createElement("span");
                     captionStartElement.classList.add("scale-caption-start");
