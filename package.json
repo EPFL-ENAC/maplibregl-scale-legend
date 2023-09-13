@@ -1,6 +1,6 @@
 {
   "name": "maplibregl-scale-legend",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MapLibre GL JS plugin to add a scale as a legend to the map",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -25,14 +25,16 @@ class ScaleLegendControl {
             scaleElement.id = scale.id;
             scaleElement.title = scale.title || "";
             scaleElement.classList.add("scale", scale.id.replace(/[^a-z0-9-]/gi, '_'));
+            const captionElement = document.createElement("div");
+            captionElement.classList.add("scale-caption");
             if (scale.title) {
-                const captionElement = document.createElement("div");
-                captionElement.classList.add("scale-caption");
-                captionElement.innerHTML = scale.title;
+                const captionTitleElement = document.createElement("div");
+                captionTitleElement.classList.add("scale-caption-title");
+                captionTitleElement.innerHTML = scale.title;
                 if (scale.unit) {
-                    captionElement.innerHTML += " (" + scale.unit + ")";
+                    captionTitleElement.innerHTML += " (" + scale.unit + ")";
                 }
-                scaleElement.appendChild(captionElement);
+                captionElement.appendChild(captionTitleElement);
             }
             if (scale.titleStart || scale.titleEnd) {
                 const captionStartEndElement = document.createElement("div");
@@ -49,8 +51,9 @@ class ScaleLegendControl {
                     captionEndElement.innerHTML = scale.titleEnd;
                     captionStartEndElement.appendChild(captionEndElement);
                 }
-                scaleElement.appendChild(captionStartEndElement);
+                captionElement.appendChild(captionStartEndElement);
             }
+            scaleElement.appendChild(captionElement);
             for (const scaleEntry of scale.scale) {
                 const entryElement = document.createElement("span");
                 entryElement.classList.add("scale-entry");
