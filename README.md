@@ -12,21 +12,12 @@ npm install https://github.com/EPFL-ENAC/maplibregl-scale-legend.git --save
 
 ```ts
 import { ScaleLegendControl } from "maplibregl-scale-legend";
+import type { ScaleDefinition } from 'maplibregl-scale-legend',
 import { Map } from "maplibre-gl";
 
 import "maplibregl-scale-legend/styles.css";
 
 const map = new Map();
-map.addControl(new ScaleLegendControl());
-```
-
-## Options:
-
-If you want to supply your own list of scale legends, pass them in the constructor.
-
-```ts
-import { ScaleLegendControl } from 'maplibregl-scale-legend',
-import type { ScaleDefinition } from 'maplibregl-scale-legend',
 
 const scales: ScaleDefinition[] = [
     // ...
@@ -39,10 +30,10 @@ map.addControl(scalesControl);
 If you want to show a specific scale, use the `schowScale()` function.
 
 ```ts
-// show a specific scale
+// show a specific scale legend
 scalesControl.showScale(scaleId);
 
-// hide all scales
+// hide all scale legends
 scalesControl.showScale();
 ```
 
